@@ -316,6 +316,18 @@
 										RelativePath="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component\component.h"
 										>
 									</File>
+									<Filter
+										Name="D3D9"
+										>
+										<File
+											RelativePath="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component\D3D9\D3D9Component.h"
+											>
+										</File>
+									</Filter>
+									<Filter
+										Name="Vulkan"
+										>
+									</Filter>
 								</Filter>
 							</Filter>
 						</Filter>
@@ -376,6 +388,14 @@
 										RelativePath="..\Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component\Composite.cpp"
 										>
 									</File>
+									<Filter
+										Name="D3D9"
+										>
+										<File
+											RelativePath="..\Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component\D3D9\LineList.cpp"
+											>
+										</File>
+									</Filter>
 								</Filter>
 							</Filter>
 						</Filter>

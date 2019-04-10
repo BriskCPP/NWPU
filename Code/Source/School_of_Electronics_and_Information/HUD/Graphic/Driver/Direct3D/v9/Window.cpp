@@ -3,6 +3,9 @@
 
 #include "School_of_Electronics_and_Information/HUD/HUD.h"
 
+#include "School_of_Electronics_and_Information\HUD\Graphic\Engine\Vector.h"
+using NWPU::School_of_Electronics_and_Information::HUD::Graphic::Engine::Vector;
+
 namespace NWPU
 {
 	namespace School_of_Electronics_and_Information
@@ -17,6 +20,22 @@ namespace NWPU
 					{
 						namespace v9
 						{
+							HINSTANCE Window::getHInstance() const
+							{
+								return this->hInstance;
+							}
+
+							HWND Window::getHWND() const
+							{
+								return this->hwnd;
+							}
+
+							void Window::getSize(int &width, int &height) const
+							{
+								width = this->width;
+								height = this->height;
+							}
+
 							IDirect3DDevice9 * Window::getDevice() const
 							{
 								return this->device;
@@ -27,25 +46,61 @@ namespace NWPU
 								//
 							}
 
+
+							void Window::setStaticCamera(
+								const Vector &position /* = Vector(0, 0, 0) */,
+								const Vector &target /* = Vector(0, 0, 1) */,
+								const double angle /* = 0.5f*D3DX_PI */,
+								const double zMin /* = 0.0 */,
+								const double zMax /* = 1073741824.0*/
+							)
+							{
+								D3DXMATRIX transformMatrix;
+								D3DXVECTOR3 d3dxPosition = D3DXVECTOR3(
+									static_cast<float>(position.getX()),
+									static_cast<float>(position.getY()),
+									static_cast<float>(position.getZ())
+								);
+								D3DXVECTOR3 d3dxTarget = D3DXVECTOR3(
+									static_cast<float>(target.getX()),
+									static_cast<float>(target.getY()),
+									static_cast<float>(target.getZ())
+								);
+
+								D3DXMatrixLookAtLH(&transformMatrix,
+									&d3dxPosition, &d3dxTarget,
+									&D3DXVECTOR3(0.0f, 1.0f, 0.0f)
+								);
+								this->device->SetTransform(D3DTS_VIEW, &transformMatrix);
+
+								D3DXMatrixPerspectiveFovLH(&transformMatrix, 
+									static_cast<float>(angle),
+									static_cast<float>(this->width) / static_cast<float>(this->height),
+									static_cast<float>(zMin), static_cast<float>(zMax)
+								);
+								this->device->SetTransform(D3DTS_PROJECTION, &transformMatrix);
+							}
+
+
 							//下面的函数轻易不变
-							void Window::render(void (*displayFunction)(
+							void Window::render(void(*displayFunction)(
 								const double totalTime,
 								const double deltaTime,
 								const Window &window
 								)) const
 							{
 								MSG message;
-								ZeroMemory(&message,sizeof(MSG));
+								ZeroMemory(&message, sizeof(MSG));
 
-								double appStartTime  = (double)timeGetTime();
+								double appStartTime = (double)timeGetTime();
 								double lastDisplayFunctionEnterTime = appStartTime;
 
 								//清理资源
 								//Direct3D::v9::resource::OneFrameLifecycleResource::getInstance()->clear(device);
 
-								while(message.message!=WM_QUIT)
+								while (message.message != WM_QUIT)
 								{
-									if(PeekMessage(&message,0,0,0,PM_REMOVE))
+									if (PeekMessage(&message, 0, 0, 0, PM_REMOVE))
 									{
 										TranslateMessage(&message);
 										DispatchMessage(&message);
@@ -66,12 +121,21 @@ namespace NWPU
 								//
 							}
 
+							//拷贝构造函数
+							Window::Window(const Window &window)
+							{
+								this->hInstance = window.getHInstance();
+								this->hwnd = window.getHWND();
+								this->device = window.getDevice();
+								window.getSize(this->width, this->height);
+							}
+
 							Window::Window(
-								int width,int height,bool fullScreen /* = false */,
+								int width, int height, bool fullScreen /* = false */,
 								HINSTANCE hInstance /* = GetModuleHandle(NULL) */,
 								std::string title /* = std::string("Direct3D") */,
-								InitConfig initConfig /* = InitConfig() */ 
-								)
+								InitConfig initConfig /* = InitConfig() */
+							)
 							{
 								this->width = width;
 								this->height = height;
@@ -86,15 +150,15 @@ namespace NWPU
 								windowClass.cbClsExtra = 0;
 								windowClass.cbWndExtra = 0;
 								windowClass.hInstance = hInstance;
-								windowClass.hIcon = LoadIcon(0,IDI_APPLICATION);
+								windowClass.hIcon = LoadIcon(0, IDI_APPLICATION);
 								windowClass.hCursor = LoadCursor(0, IDC_ARROW);
 								windowClass.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
 								windowClass.lpszMenuName = 0;
 								windowClass.lpszClassName = TEXT("Direct3D Window");
 								//注册窗口类
-								if(!RegisterClass(&windowClass))
+								if (!RegisterClass(&windowClass))
 								{
-									MessageBoxA(0,"RegisterClass Failed",0,0);
+									MessageBoxA(0, "RegisterClass Failed", 0, 0);
 									exit(-1);//非正常退出
 								}
 								//创建窗口
@@ -106,25 +170,25 @@ namespace NWPU
 								using NWPU::School_of_Electronics_and_Information::HUD::Graphic::Driver::Direct3D::Util::Converter::TextConverter;
 
 								LPWSTR windowTitle = NULL;
-								TextConverter::stringToWideChar(title,windowTitle);
-								this->hwnd = CreateWindow(TEXT("Direct3D Window"),windowTitle,WS_EX_TOPMOST|(WS_OVERLAPPEDWINDOW^WS_THICKFRAME),0,0,this->width,this->height,0,0,hInstance,0);
+								TextConverter::stringToWideChar(title, windowTitle);
+								this->hwnd = CreateWindow(TEXT("Direct3D Window"), windowTitle, WS_EX_TOPMOST | (WS_OVERLAPPEDWINDOW^WS_THICKFRAME), 0, 0, this->width, this->height, 0, 0, hInstance, 0);
 								delete[] windowTitle;
 								//显示及更新窗口
-								if(!this->hwnd)
+								if (!this->hwnd)
 								{
-									MessageBoxA(0,"Direct3D CreateWindow Failed",0,0);
+									MessageBoxA(0, "Direct3D CreateWindow Failed", 0, 0);
 									exit(-1);
 								}
 
-								ShowWindow(this->hwnd,SW_SHOW);
+								ShowWindow(this->hwnd, SW_SHOW);
 								UpdateWindow(this->hwnd);
 
 								//创建Direct3D 9接口
 								//这是最原始的防止污染全局命名空间的方法
 								IDirect3D9 *direct3D9 = Direct3DCreate9(D3D_SDK_VERSION);
-								if(!direct3D9)
+								if (!direct3D9)
 								{
-									MessageBoxA(0,"Direct3DCreate9() Failed",0,0);
+									MessageBoxA(0, "Direct3DCreate9() Failed", 0, 0);
 									exit(-1);
 								}
 
@@ -132,7 +196,7 @@ namespace NWPU
 								direct3D9->GetDeviceCaps(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, &caps);
 								//DWORD vertexProcessingByHardwareOrSoftwareFlag = (caps.DevCaps&D3DDEVCAPS_HWTRANSFORMANDLIGHT)?D3DCREATE_HARDWARE_VERTEXPROCESSING:D3DCREATE_SOFTWARE_VERTEXPROCESSING;
 								DWORD vertexProcessingByHardwareOrSoftwareFlag = D3DCREATE_HARDWARE_VERTEXPROCESSING;
-								if(caps.DevCaps&D3DDEVCAPS_HWTRANSFORMANDLIGHT)
+								if (caps.DevCaps&D3DDEVCAPS_HWTRANSFORMANDLIGHT)
 									vertexProcessingByHardwareOrSoftwareFlag = D3DCREATE_HARDWARE_VERTEXPROCESSING;
 								else vertexProcessingByHardwareOrSoftwareFlag = D3DCREATE_SOFTWARE_VERTEXPROCESSING;
 
@@ -166,7 +230,7 @@ namespace NWPU
 								//创建设备
 								//todo:在这里是不是可以改成promise那样的回调？？
 								//但是又要写一个工具的话是不是问题太大了？
-								
+
 								D3DDEVTYPE deviceType = D3DDEVTYPE_HAL;
 								//long
 								HRESULT hResult = direct3D9->CreateDevice(D3DADAPTER_DEFAULT, deviceType, this->hwnd, vertexProcessingByHardwareOrSoftwareFlag, &presentParameters, &(this->device));
@@ -174,7 +238,7 @@ namespace NWPU
 								{
 									presentParameters.MultiSampleType = D3DMULTISAMPLE_8_SAMPLES;
 									hResult = direct3D9->CreateDevice(D3DADAPTER_DEFAULT, deviceType, this->hwnd, vertexProcessingByHardwareOrSoftwareFlag, &presentParameters, &(this->device));
-									if(FAILED(hResult))
+									if (FAILED(hResult))
 									{
 										presentParameters.AutoDepthStencilFormat = D3DFMT_D16;
 										presentParameters.MultiSampleType = D3DMULTISAMPLE_4_SAMPLES;
@@ -202,19 +266,19 @@ namespace NWPU
 								UINT uMessage,
 								WPARAM wParam,
 								LPARAM lParam
-								)
+							)
 							{
-								switch(uMessage)
+								switch (uMessage)
 								{
 								case WM_DESTROY:
 									::PostQuitMessage(0);
 									break;
 								case WM_KEYDOWN:
-									if(wParam == VK_ESCAPE)
+									if (wParam == VK_ESCAPE)
 										::DestroyWindow(hwnd);
 									break;
 								}
-								return DefWindowProc(hwnd,uMessage,wParam,lParam);
+								return DefWindowProc(hwnd, uMessage, wParam, lParam);
 							}
 						}
 					}

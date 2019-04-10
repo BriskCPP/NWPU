@@ -38,9 +38,9 @@ namespace NWPU
 						double getZ() const;
 
 						//重载向量常用的运算符
-						Vector operator+(const Vector &vector);
-						Vector operator-(const Vector &vector);
-						Vector operator*(const Vector &vector);
+						Vector operator+(const Vector &vector) const;
+						Vector operator-(const Vector &vector) const;
+						Vector operator*(const Vector &vector) const;
 
 						//用于旋转向量
 						Vector rotate(const Vector &rotation);

@@ -3,6 +3,8 @@
 #include "../Vector.h"
 //显示对象的抽象类
 
+//Direct3D 9特定的组件实现
+
 namespace NWPU
 {
 	namespace School_of_Electronics_and_Information
@@ -19,16 +21,16 @@ namespace NWPU
 						//该类相当于所有显示组件的基类
 						class DisplayObject
 						{
-						protected:
-							//
+						
+						private:
 							Vector relativePosition;
 							Vector relativeRotation;
 							Vector relativeScale;
-
+						protected:
 							DisplayObject(
-								Vector relativePosition = Vector(0,0,0),
-								Vector relativeRotation = Vector(0,0,0),
-								Vector relativeScale = Vector(1,1,1)
+								const Vector &relativePosition = Vector(0,0,0),
+								const Vector &relativeRotation = Vector(0,0,0),
+								const Vector &relativeScale = Vector(1,1,1)
 								);
 						public:
 							//这三个参数是被调用的对象的空间绝对位置，绝对旋转和绝对缩放，
@@ -37,9 +39,9 @@ namespace NWPU
 							//绝对位置会受到上一级直到上一级的总旋转的影响。
 							//旋转显然也会受到直到上一级的累加旋转的影响
 							virtual void render(
-								Vector absolutePosition = Vector(0,0,0),
-								Vector absoluteRotation = Vector(0,0,0),
-								Vector absoluteScale = Vector(1,1,1)
+								const Vector &absolutePosition = Vector(0,0,0),
+								const Vector &absoluteRotation = Vector(0,0,0),
+								const Vector &absoluteScale = Vector(1,1,1)
 								) = 0;
 
 							//每一个显示组件都必须有这三个getter methods
@@ -58,15 +60,15 @@ namespace NWPU
 							std::vector<DisplayObject *> children;
 						public:
 							void render(
-								Vector absolutePosition = Vector(0,0,0),
-								Vector absoluteRotation = Vector(0,0,0),
-								Vector absoluteScale = Vector(1,1,1));
+								const Vector &absolutePosition = Vector(0,0,0),
+								const Vector &absoluteRotation = Vector(0,0,0),
+								const Vector &absoluteScale = Vector(1,1,1));
 							
 							//默认构造函数
 							Composite(
-								Vector relativePosition = Vector(0,0,0),
-								Vector relativeRotation = Vector(0,0,0),
-								Vector relativeScale = Vector(1,1,1));
+								const Vector &relativePosition = Vector(0,0,0),
+								const Vector &relativeRotation = Vector(0,0,0),
+								const Vector &relativeScale = Vector(1,1,1));
 							//增加子组件，返回子组件总数
 							std::vector<DisplayObject *>::size_type add(
 								DisplayObject *displayObject);

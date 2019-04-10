@@ -74,6 +74,18 @@
     <Filter Include="Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\Util">
       <UniqueIdentifier>{920f11d0-9fb6-4225-b7d6-a9c6789882eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component\D3D9">
+      <UniqueIdentifier>{2bac021b-4527-4aad-94c7-2e122f567236}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component\D3D9">
+      <UniqueIdentifier>{5e69a4de-91f1-4929-a1cf-bacb37801d32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Header\School_of_Electronics_and_Information\HUD\Demo">
+      <UniqueIdentifier>{08f8b043-c55c-46a6-846d-94fb3d341070}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Source\School_of_Electronics_and_Information\HUD\Demo">
+      <UniqueIdentifier>{d806b7d1-093a-4d71-85f7-371b66776d2a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\HUD.h">
@@ -100,6 +112,9 @@
     <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine\Vector.h">
       <Filter>Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine</Filter>
     </ClInclude>
+    <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component\D3D9\D3D9Component.h">
+      <Filter>Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component\D3D9</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\Util\TextConverter.cpp">
@@ -116,6 +131,9 @@
     </ClCompile>
     <ClCompile Include="..\Code\Source\School_of_Electronics_and_Information\HUD\main.cpp">
       <Filter>Code\Source\School_of_Electronics_and_Information\HUD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component\D3D9\LineList.cpp">
+      <Filter>Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component\D3D9</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

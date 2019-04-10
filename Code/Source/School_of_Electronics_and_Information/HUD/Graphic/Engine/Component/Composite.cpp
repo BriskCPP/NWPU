@@ -18,9 +18,9 @@ namespace NWPU
 						//绝对位置会受到上一级直到上一级的总旋转的影响。
 						//旋转显然也会受到直到上一级的累加旋转的影响
 						void Composite::render(
-							Vector absolutePosition /* = Vector(0,0,0) */,
-							Vector absoluteRotation /* = Vector(0,0,0) */,
-							Vector absoluteScale /* = Vector(1,1,1) */)
+							const Vector &absolutePosition /* = Vector(0,0,0) */,
+							const Vector &absoluteRotation /* = Vector(0,0,0) */,
+							const Vector &absoluteScale /* = Vector(1,1,1) */)
 						{
 							for(std::vector<DisplayObject *>::iterator childrenIterator = this->children.begin();
 								childrenIterator!=this->children.end();childrenIterator++
@@ -54,9 +54,9 @@ namespace NWPU
 						}
 						//下面这几个函数都非常非常地简单
 						Composite::Composite(
-							Vector relativePosition /* = Vector(0,0,0) */,
-							Vector relativeRotation /* = Vector(0,0,0) */, 
-							Vector relativeScale /* = Vector(1,1,1) */
+							const Vector &relativePosition /* = Vector(0,0,0) */,
+							const Vector &relativeRotation /* = Vector(0,0,0) */,
+							const Vector &relativeScale /* = Vector(1,1,1) */
 							):DisplayObject(relativePosition,relativeRotation,relativeScale)
 						{
 							//我发现自己越来越6了啊
@@ -74,9 +74,9 @@ namespace NWPU
 						//下面的这部分一般是不变的
 
 						DisplayObject::DisplayObject(
-							Vector relativePosition /* = Vector(0,0,0) */,
-							Vector relativeRotation /* = Vector(0,0,0) */,
-							Vector relativeScale /* = Vector(1,1,1) */ )
+							const Vector &relativePosition /* = Vector(0,0,0) */,
+							const Vector &relativeRotation /* = Vector(0,0,0) */,
+							const Vector &relativeScale /* = Vector(1,1,1) */ )
 						{
 							this->relativePosition = relativePosition;
 							this->relativeRotation = relativeRotation;

@@ -69,7 +69,7 @@ namespace NWPU
 						return this->z;
 					}
 
-					Vector Vector::operator+(const Vector &vector)
+					Vector Vector::operator+(const Vector &vector) const
 					{
 						return Vector(
 							this->x + vector.getX(),
@@ -77,7 +77,7 @@ namespace NWPU
 							this->z + vector.getZ()
 							);
 					}
-					Vector Vector::operator-(const Vector &vector)
+					Vector Vector::operator-(const Vector &vector) const
 					{
 						return Vector(
 							this->x - vector.getX(),
@@ -85,7 +85,7 @@ namespace NWPU
 							this->z - vector.getZ()
 							);
 					}
-					Vector Vector::operator*(const Vector &vector)
+					Vector Vector::operator*(const Vector &vector) const
 					{
 						return Vector(
 							this->x * vector.getX(),
