@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Code">
+      <UniqueIdentifier>{D9FD9F5E-8113-454F-AAA6-A1C1962A589E}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd;cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Code\Header">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Code\Source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Code\Header\School_of_Electronics_and_Information">
+      <UniqueIdentifier>{07623385-5185-425e-8c58-7abfe875eeba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Source\School_of_Electronics_and_Information">
+      <UniqueIdentifier>{2619de7d-ef5b-4dbd-8de7-8e1f4aadc9d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Header\School_of_Electronics_and_Information\HUD">
+      <UniqueIdentifier>{483f115c-6a31-4273-82e7-095c362f3d20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Source\School_of_Electronics_and_Information\HUD">
+      <UniqueIdentifier>{3a254179-0250-49aa-b04c-dd541d78aab5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Header\School_of_Electronics_and_Information\HUD\Graphic">
+      <UniqueIdentifier>{0d2cd008-790e-4620-87c3-ff71c9a29c11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver">
+      <UniqueIdentifier>{54b43dd6-a2f1-45bf-a327-84d0de80212d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine">
+      <UniqueIdentifier>{8fc9994f-5728-40e2-a479-786e0f60b41a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Source\School_of_Electronics_and_Information\HUD\Graphic">
+      <UniqueIdentifier>{c96da0c8-d76c-446e-97ff-244b4205da22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Driver">
+      <UniqueIdentifier>{9dbc4c2a-eb72-4c95-a23f-6c02149c68b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Engine">
+      <UniqueIdentifier>{bde88df6-1e38-439e-add9-8fd261586db2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D">
+      <UniqueIdentifier>{81e01d60-8452-48a7-9312-8959fa3cb17e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\v9">
+      <UniqueIdentifier>{a7b3121c-9768-4fb3-983f-a665abc0d867}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver\Vulkan">
+      <UniqueIdentifier>{09682b3a-a33f-4147-9454-baf397df0285}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component">
+      <UniqueIdentifier>{4719d2ba-f83b-4194-806d-3db9805d1d55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component">
+      <UniqueIdentifier>{91aa9676-3e46-4467-bd12-5928ff44f003}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D">
+      <UniqueIdentifier>{78122b54-90c3-482c-a903-64e72e8ae8f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\v9">
+      <UniqueIdentifier>{ce48677a-3079-4b8a-a663-89ad3bcece5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\Util">
+      <UniqueIdentifier>{5a4860cd-d9a3-4068-a065-d39615792833}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\Util">
+      <UniqueIdentifier>{920f11d0-9fb6-4225-b7d6-a9c6789882eb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\HUD.h">
+      <Filter>Code\Header\School_of_Electronics_and_Information\HUD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\Util\Converter.h">
+      <Filter>Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\Util\util.h">
+      <Filter>Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\v9\Direct3D9.h">
+      <Filter>Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\v9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\v9\Window.h">
+      <Filter>Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\v9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component\component.h">
+      <Filter>Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine\engine.h">
+      <Filter>Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine\Vector.h">
+      <Filter>Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\Util\TextConverter.cpp">
+      <Filter>Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\v9\Window.cpp">
+      <Filter>Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\v9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Engine\Vector.cpp">
+      <Filter>Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component\Composite.cpp">
+      <Filter>Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Source\School_of_Electronics_and_Information\HUD\main.cpp">
+      <Filter>Code\Source\School_of_Electronics_and_Information\HUD</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

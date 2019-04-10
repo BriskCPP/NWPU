@@ -30,3 +30,46 @@
 *.exe
 *.out
 *.app
+
+# 根目录下的文件
+/ipch/
+*.ipch
+
+# Visual Studio Solution User Options (.suo)
+*.suo
+# Per-User Project Options File (.user)
+*.user
+# Visual Studio 2005智能感知信息文件
+# VC++ Intellisense Database (.ncb)
+*.ncb
+# Visual Studio 2010数据库文件
+# SQL Server Compact Edition Database File (.sdf)
+# .opensdf是正在编辑中的.sdf文件
+*.sdf
+*.opensdf
+# Visual Studio 2015数据库文件
+# Data Base File (.db)
+*.db
+
+
+# 编译连接过程生成的文件
+# Object File (.obj)
+*.obj
+# VC++ Minimum Rebuild Dependency File (.idb)
+*.idb
+# Program Debug Database (.pdb)
+*.pdb
+# Incremental Linker File (.ilk)
+*.ilk
+# Compiled Resource Script (.res)
+*.res
+# 以下文件和上面的往往同在一个目录
+*.dep
+*.manifest
+*.log
+*.tlog
+*.lastbuildstate
+
+# htm格式在web中已经基本不再使用
+# 在Solution中的.htm文件一般为BuildLog.htm
+*.htm
