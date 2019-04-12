@@ -68,12 +68,6 @@
     <Filter Include="Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\v9">
       <UniqueIdentifier>{ce48677a-3079-4b8a-a663-89ad3bcece5e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\Util">
-      <UniqueIdentifier>{5a4860cd-d9a3-4068-a065-d39615792833}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\Util">
-      <UniqueIdentifier>{920f11d0-9fb6-4225-b7d6-a9c6789882eb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component\D3D9">
       <UniqueIdentifier>{2bac021b-4527-4aad-94c7-2e122f567236}</UniqueIdentifier>
     </Filter>
@@ -86,25 +80,22 @@
     <Filter Include="Code\Source\School_of_Electronics_and_Information\HUD\Demo">
       <UniqueIdentifier>{d806b7d1-093a-4d71-85f7-371b66776d2a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Util">
+      <UniqueIdentifier>{7e04e498-475d-4288-bb8c-87a8271d3de7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Util">
+      <UniqueIdentifier>{5861d879-7a1d-4176-8241-588ade582477}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\HUD.h">
       <Filter>Code\Header\School_of_Electronics_and_Information\HUD</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\Util\Converter.h">
-      <Filter>Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\Util</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\Util\util.h">
-      <Filter>Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\Util</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\v9\Direct3D9.h">
       <Filter>Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\v9</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\v9\Window.h">
       <Filter>Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\v9</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component\component.h">
-      <Filter>Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component</Filter>
     </ClInclude>
     <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine\engine.h">
       <Filter>Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine</Filter>
@@ -115,11 +106,20 @@
     <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component\D3D9\D3D9Component.h">
       <Filter>Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component\D3D9</Filter>
     </ClInclude>
+    <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component\component.hpp">
+      <Filter>Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Util\util.h">
+      <Filter>Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Util\converter.hpp">
+      <Filter>Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Util\smart_pointer.hpp">
+      <Filter>Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Util</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\Util\TextConverter.cpp">
-      <Filter>Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\Util</Filter>
-    </ClCompile>
     <ClCompile Include="..\Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\v9\Window.cpp">
       <Filter>Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\v9</Filter>
     </ClCompile>
@@ -135,5 +135,11 @@
     <ClCompile Include="..\Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component\D3D9\LineList.cpp">
       <Filter>Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component\D3D9</Filter>
     </ClCompile>
+    <ClCompile Include="..\Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Util\TextConverter.cpp">
+      <Filter>Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Util</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.gitignore" />
   </ItemGroup>
 </Project>

@@ -2,7 +2,7 @@
 
 #include "School_of_Electronics_and_Information/HUD/Graphic/Driver/Direct3D/v9/Direct3D9.h"
 
-#include "../component.h"
+#include "../component.hpp"
 
 #include <vector>
 

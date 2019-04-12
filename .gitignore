@@ -50,6 +50,7 @@
 # Visual Studio 2015数据库文件
 # Data Base File (.db)
 *.db
+*.opendb
 
 
 # 编译连接过程生成的文件

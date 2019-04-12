@@ -3,6 +3,11 @@
 #include "../Vector.h"
 //显示对象的抽象类
 
+#include <iostream>
+
+#include "School_of_Electronics_and_Information/HUD/Graphic/Util/smart_pointer.hpp"
+using NWPU::School_of_Electronics_and_Information::HUD::Graphic::Util::smart_pointer::SimpleSharedPointer;
+
 //Direct3D 9特定的组件实现
 
 namespace NWPU
@@ -65,13 +70,40 @@ namespace NWPU
 								const Vector &absoluteScale = Vector(1,1,1));
 							
 							//默认构造函数
-							Composite(
+							explicit Composite(
 								const Vector &relativePosition = Vector(0,0,0),
 								const Vector &relativeRotation = Vector(0,0,0),
 								const Vector &relativeScale = Vector(1,1,1));
 							//增加子组件，返回子组件总数
 							std::vector<DisplayObject *>::size_type add(
-								DisplayObject *displayObject);
+								DisplayObject *displayObject
+							);
+
+
+							template<typename DisplayObjectPrototype>
+							std::vector<DisplayObject *>::size_type add(
+								const SimpleSharedPointer<DisplayObjectPrototype> &displayObjectSimpleSharedPointer
+							)
+							{
+								this->children.push_back(displayObjectSimpleSharedPointer.getProtoPointerHolder()->protoPointer);
+								return this->children.size();
+							}
+
+							template<typename  DisplayObjectPrototype>
+							std::vector<DisplayObject *>::size_type add(
+								const std::vector<SimpleSharedPointer<DisplayObjectPrototype>> &displayObjectSimpleSharedPointersVector
+							)
+							{
+								//内嵌依赖类型名 要加typename关键字
+								for (typename std::vector<SimpleSharedPointer<DisplayObjectPrototype>>::const_iterator sharedPointerVectorIterator = displayObjectSimpleSharedPointersVector.begin();
+									sharedPointerVectorIterator != displayObjectSimpleSharedPointersVector.end(); ++sharedPointerVectorIterator
+									)
+								{
+									this->add(*sharedPointerVectorIterator);
+								}
+								return this->children.size();
+							}
+
 							void clear();//清除所有子组件
 
 							//todo:还没有完成增删改查呢

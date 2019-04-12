@@ -1,4 +1,4 @@
-#include "School_of_Electronics_and_Information/HUD/Graphic/Engine/Component/component.h"
+#include "School_of_Electronics_and_Information/HUD/Graphic/Engine/Component/component.hpp"
 
 namespace NWPU
 {

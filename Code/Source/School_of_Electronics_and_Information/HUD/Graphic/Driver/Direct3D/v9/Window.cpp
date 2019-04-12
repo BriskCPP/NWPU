@@ -167,7 +167,7 @@ namespace NWPU
 								//这里的改变是为了禁止窗口改变大小
 								//this->hwnd = CreateWindow(TEXT("Direct3D Window"),TEXT("Direct3D project"),WS_EX_TOPMOST|(WS_OVERLAPPEDWINDOW^WS_THICKFRAME),0,0,width,height,0,0,hInstance,0);
 								//这里的改变是为了外部输入的窗口标题
-								using NWPU::School_of_Electronics_and_Information::HUD::Graphic::Driver::Direct3D::Util::Converter::TextConverter;
+								using NWPU::School_of_Electronics_and_Information::HUD::Graphic::Util::converter::TextConverter;
 
 								LPWSTR windowTitle = NULL;
 								TextConverter::stringToWideChar(title, windowTitle);

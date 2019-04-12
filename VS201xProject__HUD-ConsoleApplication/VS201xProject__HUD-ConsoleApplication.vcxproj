@@ -484,23 +484,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\Util\Converter.h" />
-    <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\Util\util.h" />
     <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\v9\Direct3D9.h" />
     <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\v9\Window.h" />
-    <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component\component.h" />
+    <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component\component.hpp" />
     <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component\D3D9\D3D9Component.h" />
     <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine\engine.h" />
     <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Engine\Vector.h" />
+    <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Util\converter.hpp" />
+    <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Util\smart_pointer.hpp" />
+    <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\Graphic\Util\util.h" />
     <ClInclude Include="..\Code\Header\School_of_Electronics_and_Information\HUD\HUD.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\Util\TextConverter.cpp" />
     <ClCompile Include="..\Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Driver\Direct3D\v9\Window.cpp" />
     <ClCompile Include="..\Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component\Composite.cpp" />
     <ClCompile Include="..\Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Engine\Component\D3D9\LineList.cpp" />
     <ClCompile Include="..\Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Engine\Vector.cpp" />
+    <ClCompile Include="..\Code\Source\School_of_Electronics_and_Information\HUD\Graphic\Util\TextConverter.cpp" />
     <ClCompile Include="..\Code\Source\School_of_Electronics_and_Information\HUD\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.gitignore" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
