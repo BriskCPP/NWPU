@@ -22,8 +22,8 @@ namespace NWPU
 							const Vector &absoluteRotation /* = Vector(0,0,0) */,
 							const Vector &absoluteScale /* = Vector(1,1,1) */)
 						{
-							for(std::vector<DisplayObject *>::iterator childrenIterator = this->children.begin();
-								childrenIterator!=this->children.end();childrenIterator++
+							for(std::vector<SimpleSharedPointer<DisplayObject>>::const_iterator childrenIterator = this->childrenPointerVector.begin();
+								childrenIterator!=this->childrenPointerVector.end();++childrenIterator
 								)
 							{
 								//记住：这个元素的绝对位置会受到累加旋转的影响
@@ -52,6 +52,7 @@ namespace NWPU
 									absoluteScale * ((*childrenIterator)->getRelativeScale()));
 							}
 						}
+
 						//下面这几个函数都非常非常地简单
 						Composite::Composite(
 							const Vector &relativePosition /* = Vector(0,0,0) */,
@@ -62,14 +63,9 @@ namespace NWPU
 							//我发现自己越来越6了啊
 						}
 
-						std::vector<DisplayObject *>::size_type Composite::add(DisplayObject *displayObject)
-						{
-							this->children.push_back(displayObject);
-							return this->children.size();
-						}
 						void Composite::clear()
 						{
-							this->children.clear();
+							this->childrenPointerVector.clear();
 						}
 						//下面的这部分一般是不变的
 

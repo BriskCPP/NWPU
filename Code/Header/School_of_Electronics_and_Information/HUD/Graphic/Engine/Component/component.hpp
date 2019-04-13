@@ -62,7 +62,8 @@ namespace NWPU
 						class Composite:public DisplayObject
 						{
 						private:
-							std::vector<DisplayObject *> children;
+							//std::vector<DisplayObject *> children;
+							std::vector<SimpleSharedPointer<DisplayObject>> childrenPointerVector;
 						public:
 							void render(
 								const Vector &absolutePosition = Vector(0,0,0),
@@ -74,19 +75,19 @@ namespace NWPU
 								const Vector &relativePosition = Vector(0,0,0),
 								const Vector &relativeRotation = Vector(0,0,0),
 								const Vector &relativeScale = Vector(1,1,1));
-							//增加子组件，返回子组件总数
-							std::vector<DisplayObject *>::size_type add(
-								DisplayObject *displayObject
-							);
 
 
 							template<typename DisplayObjectPrototype>
-							std::vector<DisplayObject *>::size_type add(
+							std::vector<SimpleSharedPointer<DisplayObject>>::size_type add(
 								const SimpleSharedPointer<DisplayObjectPrototype> &displayObjectSimpleSharedPointer
 							)
 							{
-								this->children.push_back(displayObjectSimpleSharedPointer.getProtoPointerHolder()->protoPointer);
-								return this->children.size();
+								//this->children.push_back(displayObjectSimpleSharedPointer.getProtoPointerHolder()->protoPointer);
+								//return this->children.size();
+								this->childrenPointerVector.push_back(
+									SimpleSharedPointer<DisplayObject>(displayObjectSimpleSharedPointer)
+								);
+								return this->childrenPointerVector.size();
 							}
 
 							template<typename  DisplayObjectPrototype>
@@ -101,12 +102,10 @@ namespace NWPU
 								{
 									this->add(*sharedPointerVectorIterator);
 								}
-								return this->children.size();
+								return this->childrenPointerVector.size();
 							}
 
 							void clear();//清除所有子组件
-
-							//todo:还没有完成增删改查呢
 						};
 					}
 				}
